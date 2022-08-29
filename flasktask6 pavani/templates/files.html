@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+    <title>Upload Files</title>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+        {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endwith %}
+        <input type="file" name="the_file" />
+        <input type="submit" value="add file" />
+    </form>
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+
+</html>
